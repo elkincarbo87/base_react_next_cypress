@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ReactQueryProvider from './ReactQueryProvider';
+import * as stylex from '@stylexjs/stylex';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,9 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body {...stylex.props(styles.body)}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
   );
 }
+
+const styles = stylex.create({
+  body: {
+    boxSizing: 'border-box',
+    background: 'black',
+  },
+});
