@@ -3,24 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run remove-next-folder-to-fix-cache-styles && next dev",
+    "build": "npm run remove-next-folder-to-fix-cache-styles && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open",
+    "remove-next-folder-to-fix-cache-styles": "rm -rf .next"
   },
   "dependencies": {
+    "@stylexjs/stylex": "^0.6.1",
+    "@tanstack/react-query": "^5.40.1",
+    "@tanstack/react-query-devtools": "^5.40.1",
+    "@tanstack/react-query-next-experimental": "^5.41.0",
+    "chart.js": "^4.4.3",
+    "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@babel/plugin-transform-private-methods": "^7.24.7",
+    "@stylexjs/babel-plugin": "^0.6.1",
+    "@stylexjs/eslint-plugin": "^0.6.1",
+    "@stylexjs/nextjs-plugin": "^0.6.1",
+    "@testing-library/dom": "^10.1.0",
+    "@testing-library/react": "^16.0.0",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
+    "cypress": "^13.11.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "msw": "^2.3.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
