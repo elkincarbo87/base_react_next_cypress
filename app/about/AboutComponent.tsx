@@ -77,11 +77,6 @@ export default function AboutComponent() {
             { label: 'Lifetime interest', value: 5000, color: '#0088AD' },
             { label: 'Loan amount', value: 18000, color: '#65CAE5' },
           ]);
-          // ReactGA.send({
-          //   hitType: 'pageview',
-          //   page: '/about',
-          //   title: 'About page',
-          // });
           sendEvent({
             action: 'chartButtonClicked',
             category: 'button action',

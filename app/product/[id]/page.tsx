@@ -24,6 +24,11 @@ export default function Page({ params }: { params: { id: string } }) {
     <div>
       {productDetails?.description}
       <br />
+      <br />
+      <Link href="/cart">
+        <b>BUY this product</b>
+      </Link>
+      <br />
       <Link href="/">Go to home page</Link>
     </div>
   );
