@@ -16,7 +16,7 @@ const DESKTOP = '@media (min-width: 736px)';
 const SMALLDEVICE = '@media (max-width: 346px)';
 function formatStr(numStr: string, options: Intl.NumberFormatOptions) {
   if (numStr === '') return '';
-  return new Intl.NumberFormat('en-US', options).format(Number(numStr));
+  return new Intl.NumberFormat('COP', options).format(Number(numStr));
 }
 export type chartData = { label: string; value: number; color: string };
 
