@@ -29,8 +29,8 @@ export default function AboutComponent() {
   });
   const [showGreen, setShowGreen] = useState(true);
   const [chartData, setCharData] = useState<chartData[]>([
-    { label: 'Lifetime interest', value: 1000, color: '#0088AD' },
-    { label: 'Loan amount', value: 12000, color: '#65CAE5' },
+    { label: 'Element 1', value: 1000, color: '#0088AD' },
+    { label: 'Element 2', value: 12000, color: '#65CAE5' },
   ]);
 
   if (isLoading) {
@@ -60,7 +60,7 @@ export default function AboutComponent() {
       <div className="flex flex-row justify-center items-center">
         <DoughnutChart
           data={chartData}
-          totalLabel="Lifetime cost"
+          totalLabel="Total"
           format={{
             style: 'currency',
             currency: 'USD',
@@ -74,8 +74,8 @@ export default function AboutComponent() {
       <button
         onClick={() => {
           setCharData([
-            { label: 'Lifetime interest', value: 5000, color: '#0088AD' },
-            { label: 'Loan amount', value: 18000, color: '#65CAE5' },
+            { label: 'Element 1', value: 5000, color: '#0088AD' },
+            { label: 'Element 2', value: 18000, color: '#65CAE5' },
           ]);
           sendEvent({
             action: 'chartButtonClicked',
