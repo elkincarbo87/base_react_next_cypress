@@ -23,4 +23,14 @@ const GoogleAnalytics = () => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const sendEvent = ({ action, category, label, value }: any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (window as any).gtag('event', action, {
+    event_category: category,
+    event_label: label,
+    value: value,
+  });
+};
+
 export default GoogleAnalytics;

@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 import ReactQueryProvider from './ReactQueryProvider';
 import * as stylex from '@stylexjs/stylex';
-import { GoogleTagManager } from '@next/third-parties/google';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: 'Elkin Cardona NextJs Base Project',
   description:
-    'NextJs Base Project using typescript, eslint, stylexjs, tailwind, chartjs, cypress, google analitys(@next/third-parties) and testing library',
+    'NextJs Base Project using typescript, eslint, stylexjs, tailwind, chartjs, cypress, google analitys and testing library',
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body {...stylex.props(styles.body)}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_MEASUREMENT_ID || ''} />
+      <GoogleAnalytics />
     </html>
   );
 }
