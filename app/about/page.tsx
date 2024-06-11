@@ -5,6 +5,7 @@ import Link from 'next/link';
 import * as stylex from '@stylexjs/stylex';
 import { DoughnutChart, chartData } from '../components/DonutChart';
 import { useQuery } from '@tanstack/react-query';
+import { sendGTMEvent, sendGAEvent } from '@next/third-parties/google';
 
 type todosType = {
   userId: number;
@@ -47,7 +48,11 @@ export default function Page() {
         Home
       </Link>
       <br />
-      <button onClick={() => setShowGreen(!showGreen)}>
+      <button
+        onClick={() => {
+          setShowGreen(!showGreen);
+        }}
+      >
         Button: {showGreen ? 'true' : 'false'}
       </button>
       <br />
@@ -67,12 +72,18 @@ export default function Page() {
       <br />
       <br />
       <button
-        onClick={() =>
+        onClick={() => {
           setCharData([
             { label: 'Lifetime interest', value: 5000, color: '#0088AD' },
             { label: 'Loan amount', value: 18000, color: '#65CAE5' },
-          ])
-        }
+          ]);
+          sendGAEvent({
+            hitType: 'pageview',
+            page: '/about',
+            title: 'About page',
+          });
+          sendGTMEvent({ event: 'chartButtonClicked', value: 'xyz' });
+        }}
       >
         Change chart data
       </button>
